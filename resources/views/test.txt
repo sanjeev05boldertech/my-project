@@ -1,0 +1,4 @@
+# Custom post type in backend, event.
+# Theme page template, create page assign template.
+# Create a form on front end. Title, description, image.
+# Save this form as a custom post type with image.
