@@ -80,7 +80,7 @@ body {
     line-height: 1.6;
     color: #212529;
     text-align: left;
-    background-color: #3c4854
+    background-color: #07549a;
 }
 
 [tabindex="-1"]:focus {
@@ -9299,7 +9299,6 @@ a.text-dark:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, .04)
 }
 .admin-logo {
-background-image: url("http://localhost/blog/public/images/logo.jpg");
 background-repeat:  no-repeat;
 height: 89px !important;
 background-color: white;

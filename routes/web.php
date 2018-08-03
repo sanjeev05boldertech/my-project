@@ -16,14 +16,25 @@
 });
  */
  
-Route::view('/', 'welcome');
-Route::view('/register1', 'register');
-Route::view('/admin', 'admin/login');
 Route::post('/store', 'UserController@store');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
-Auth::routes();
+/* Route::get('/admin', 'AdminController@admin')->middleware('is_admin')->name('admin'); */
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix' => 'admin',  'middleware' => 'is_admin'], function(){
+	Route::get('/deshboard', 'AdminController@admin')->name('deshboard');
+});
+
+Route::group(['prefix' => 'booking',  'middleware' => 'is_admin'], function(){
+	Route::get('/deshboard', 'Booking\BookingController@index')->name('deshboard');
+});
+/* 
+Route::group(['prefix' => 'engineer',  'middleware' => 'is_admin'], function(){
+	Route::get('/deshboard', 'AdminController@admin')->name('deshboard');
+});
+
+Route::group(['prefix' => 'tracking',  'middleware' => 'is_admin'], function(){
+	Route::get('/deshboard', 'AdminController@admin')->name('deshboard');
+}); */
